@@ -6,7 +6,11 @@ const Image = ({ image, id, currentIdx }) => {
     <div
       className={`img-slide-container ${currentIdx === id ? 'block' : 'none'}`}
     >
-      <img className="img-slider" src={require(`${image.url}`)} />
+      <img
+        className="img-slider"
+        src={require(`${image.url}`)}
+        alt="Carrocel"
+      />
     </div>
   );
 };
