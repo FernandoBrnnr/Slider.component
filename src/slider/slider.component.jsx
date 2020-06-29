@@ -14,7 +14,6 @@ const Slider = () => {
     return () => clearInterval(interval);
   }, [index]);
 
-  let interval = null;
   const handleClick = (n) => {
     n = index + n;
     if (n > 2) n = 0;
