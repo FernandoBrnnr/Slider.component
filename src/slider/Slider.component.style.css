@@ -16,6 +16,7 @@
 .slider-btn:hover {
   background-color: rgba(255, 255, 255, 0.7);
   color: #000;
+  cursor: pointer;
 }
 
 .right-btn {

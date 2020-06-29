@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './Slider.component.style.css';
 import Image from './Image.component';
 import Dots from './dots.component/dots.component';
@@ -8,15 +8,21 @@ const Slider = () => {
   const [index, setIndex] = useState(0);
   const imageArray = [1, 2, 3];
 
+  useEffect(() => {
+    const interval = window.setInterval(handleClick, 5000, 1);
+
+    return () => clearInterval(interval);
+  }, [index]);
+
+  let interval = null;
   const handleClick = (n) => {
-    clearInterval(interval);
     n = index + n;
     if (n > 2) n = 0;
     if (n < 0) n = 2;
 
     setIndex(n);
+    console.log(index);
   };
-  const interval = setInterval(handleClick, 5000, 1);
 
   return (
     <div className="slider-container">
